@@ -1,0 +1,99 @@
+/* Styles pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Styles pour le header */
+header {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Styles pour les liens hypertextes */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Styles pour la barre de navigation */
+nav {
+    background-color: #444444;
+    padding: 10px;
+    position: sticky;
+    top: 0px; /* La hauteur du header fixe */
+    z-index: 1000;
+}
+.navigationContact
+{
+  background-color: blue;
+    padding: 10px;
+    position: sticky;
+    top: 0px; /* La hauteur du header fixe */
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Styles pour les sections */
+section {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+/* Styles pour les titres */
+h1, h2, h3 {
+    color: #333333;
+}
+
+/* Styles pour le titre dans l'en-tête */
+header h1 {
+    color: #ffffff;
+}
+
+/* Style pour le pied de page */
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+}
+/* Forcer le retour à la ligne de la balise PRE */		
+pre {
+   white-space: pre-wrap;             
+}
