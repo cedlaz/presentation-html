@@ -1,99 +1,62 @@
-/* Styles pour le corps de la page */
+/* =========================================
+   Styles personnalisés (en complément de Bootstrap)
+   ========================================= */
+
+
+/* Surcharge de la couleur primary de Bootstrap */
+
+/* Pour le texte (les titres h2 actuels) */
+.text-primary {
+    color: #494591 !important;
+}
+
+/* Pour les futurs fonds d'écran si vous utilisez class="bg-primary" */
+.bg-primary {
+    background-color: #494591 !important;
+}
+
+/* Pour les futurs boutons si vous utilisez class="btn btn-primary" */
+.btn-primary {
+    background-color: #494591;
+    border-color: #494591;
+}
+
+/* Effet au survol des boutons (bleu encore plus foncé) */
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active {
+    background-color: #36336b;
+    border-color: #36336b;
+}
+
+
+/* Fond de page légèrement grisé pour contraster avec les cartes blanches */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f4f6f9;
 }
 
-/* Styles pour le header */
-header {
-    background-color: #333333;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    top: 0;
-    z-index: 1000;
+/* Défilement fluide lors du clic sur un lien du menu */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Styles pour les liens hypertextes */
-a {
-    color: #007bff;
-    text-decoration: none;
+/* Marge pour éviter que la barre de navigation collante ne cache le titre des sections */
+section[id] {
+    scroll-margin-top: 75px; 
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-
-
-/* Styles pour la barre de navigation */
-nav {
-    background-color: #444444;
-    padding: 10px;
-    position: sticky;
-    top: 0px; /* La hauteur du header fixe */
-    z-index: 1000;
-}
-.navigationContact
-{
-  background-color: blue;
-    padding: 10px;
-    position: sticky;
-    top: 0px; /* La hauteur du header fixe */
-    z-index: 1000;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #007bff;
-}
-
-/* Styles pour les sections */
-section {
-    padding: 20px;
-    background-color: #ffffff;
-    margin: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-}
-
-/* Styles pour les titres */
-h1, h2, h3 {
-    color: #333333;
-}
-
-/* Styles pour le titre dans l'en-tête */
-header h1 {
-    color: #ffffff;
-}
-
-/* Style pour le pied de page */
-footer {
-    background-color: #333333;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-}
-/* Forcer le retour à la ligne de la balise PRE */		
+/* Forcer le retour à la ligne de la balise PRE et lui donner un look moderne (type éditeur de code) 
 pre {
-   white-space: pre-wrap;             
+    white-space: pre-wrap;             
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    border: 1px solid #1e2227;
+*/
+
+/* Coloration légère des éléments en code inline */
+code {
+    color: #e83e8c;
 }
