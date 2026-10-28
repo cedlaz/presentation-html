@@ -1,41 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Balise viewport indispensable pour le responsive Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Présentation de l'HTML</title>
-	<link rel="stylesheet" href="css/styles.css">
-
+    
+    <!-- CSS Bootstrap 4.6 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css"  rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
+	
+    
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <header>
-        <h1>Présentation de l'HTML</h1>
+<!-- Attributs pour activer le scrollspy (suivi du menu) -->
+<body data-spy="scroll" data-target="#navbar-main" data-offset="80" data-prismjs-copy="Copier"
+	data-prismjs-copy-error="Erreur de copie"
+	data-prismjs-copy-success="Copié !">
+
+    <!-- En-tête modernisé (Jumbotron / Header) -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">Présentation de l'HTML</h1>
+        </div>
     </header>
     
-    <nav>
-        <ul>
-            <li><a href="#structure">Structure de Base</a></li>
-            <li><a href="#balises">Balises HTML</a></li>
-            <li><a href="#texte">Éléments de Texte</a></li>
-            <li><a href="#hyperliens">Hyperliens</a></li>
-            <li><a href="#images">Images</a></li>
-            <li><a href="#listes">Listes</a></li>
-            <li><a href="#commentaires">Commentaires</a></li>
-            <li><a href="#attributs">Attributs</a></li>
-            <li><a href="#validation">Validation HTML</a></li>
-            <li><a href="#css">CSS</a></li>
-            <li><a href="#accessibilite">Accessibilité</a></li>
-            <li><a href="#semantique">Balises Sémantiques</a></li>
-        </ul>
+    <!-- Barre de navigation responsive et collante -->
+    <nav id="navbar-main" class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top shadow">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav flex-wrap">
+                    <li class="nav-item"><a class="nav-link" href="#structure">Structure</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#balises">Balises</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#texte">Texte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hyperliens">Hyperliens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#images">Images</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#listes">Listes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#commentaires">Commentaires</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#attributs">Attributs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#validation">Validation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#css">CSS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#accessibilite">Accessibilité</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#semantique">Sémantique</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <section id="structure">
-        <h2>Structure de Base</h2>
-        <p>Un document HTML commence généralement par la déclaration &lt;!DOCTYPE html&gt; qui indique la version HTML utilisée (par exemple, HTML5).</p>
-        <p>Ensuite, la structure de base comprend les balises &lt;html&gt;, &lt;head&gt;, et &lt;body&gt; :</p>
-        <pre>
-&lt;!DOCTYPE html&gt;
+    <!-- Contenu principal -->
+    <main class="container my-5">
+        
+        <section id="structure" class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary border-bottom pb-2">Structure de Base</h2>
+                <p class="card-text">Un document HTML commence généralement par la déclaration <code>&lt;!DOCTYPE html&gt;</code> qui indique la version HTML utilisée (par exemple, HTML5).</p>
+                <p class="card-text">Ensuite, la structure de base comprend les balises <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, et <code>&lt;body&gt;</code> :</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;!-- Metadonnées, liens vers des fichiers CSS, etc. --&gt;
@@ -43,110 +68,153 @@
 &lt;body&gt;
     &lt;!-- Contenu visible de la page --&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-        </pre>
-    </section>
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
 
-    <section id="balises">
-        <h2>Balises HTML</h2>
-        <p>Les balises HTML sont utilisées pour définir la structure et le contenu de la page.</p>
-        <p>Les balises sont généralement sous la forme &lt;nom_de_la_balise&gt;.</p>
-        <p>Par exemple, voici une balise de paragraphe :</p>
-        <pre>
-&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
-        </pre>
-        <p>Et voici une balise d'image :</p>
-        <pre>
-&lt;img src="image.jpg" alt="Image de démonstration"&gt;
-        </pre>
-    </section>
+        <section id="balises" class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary border-bottom pb-2">Balises HTML</h2>
+                <p class="card-text">Les balises HTML sont utilisées pour définir la structure et le contenu de la page.</p>
+                <p class="card-text">Les balises sont généralement sous la forme <code>&lt;nom_de_la_balise&gt;</code>.</p>
+                <p class="card-text">Par exemple, voici une balise de paragraphe :</p>
+<pre><code class="language-html">&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;</code>
+</pre>
+                <p class="card-text">Et voici une balise d'image :</p>
+<pre><code class="language-html">&lt;img src="image.jpg" alt="Image de démonstration"&gt</code>
+</pre>
+            </div>
+        </section>
 
-    <section id="texte">
-        <h2>Éléments de Texte</h2>
-        <p>Utilisez des balises pour structurer le texte, par exemple &lt;h1&gt; à &lt;h6&gt; pour les titres de différentes tailles, &lt;p&gt; pour les paragraphes, &lt;em&gt; pour l'italique, &lt;strong&gt; pour le gras, etc.</p>
-        <p>Voici un exemple de titre :</p>
-        <pre>
-&lt;h1&gt;Ceci est un titre&lt;/h1&gt;
-        </pre>
-        <p>Et voici un exemple de paragraphe en italique :</p>
-        <pre>
-&lt;p&gt;Ceci est un texte &lt;em&gt;en italique&lt;/em&gt;.&lt;/p&gt;
-        </pre>
-    </section>
+        <section id="texte" class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary border-bottom pb-2">Éléments de Texte</h2>
+                <p class="card-text">Utilisez des balises pour structurer le texte, par exemple <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> pour les titres de différentes tailles, <code>&lt;p&gt;</code> pour les paragraphes, <code>&lt;em&gt;</code> pour l'italique, <code>&lt;strong&gt;</code> pour le gras, etc.</p>
+                <p class="card-text">Voici un exemple de titre :</p>
+<pre><code class="language-html">&lt;h1&gt;Ceci est un titre&lt;/h1&gt;</code>
+</pre>
+                <p class="card-text">Et voici un exemple de paragraphe en italique :</p>
+<pre><code class="language-html">&lt;p&gt;Ceci est un texte &lt;em&gt;en italique&lt;/em&gt;.&lt;/p&gt;</code></pre>
+            </div>
+        </section>
 
-    <section id="hyperliens">
-        <h2>Hyperliens</h2>
-        <p>Utilisez la balise &lt;a&gt; pour créer des liens hypertextes vers d'autres pages web ou des ressources.</p>
-        <p>Voici un exemple de lien vers une page web :</p>
-        <pre>
-&lt;a href="https://www.example.com"&gt;Visitez notre site web&lt;/a&gt;
-        </pre>
-    </section>
+        <section id="hyperliens" class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary border-bottom pb-2">Hyperliens</h2>
+                <p class="card-text">Utilisez la balise <code>&lt;a&gt;</code> pour créer des liens hypertextes vers d'autres pages web ou des ressources.</p>
+                <p class="card-text">Voici un exemple de lien vers une page web :</p>
+<pre><code class="language-html">&lt;a href="https://www.example.com"&gt;Visitez notre site web&lt;/a&gt;</code></pre>
+            </div>
+        </section>
 
-    <section id="images">
-        <h2>Images</h2>
-        <p>Utilisez la balise &lt;img&gt; pour afficher des images sur votre page. N'oubliez pas d'ajouter l'attribut src pour spécifier le chemin de l'image.</p>
-        <p>Voici un exemple d'inclusion d'une image :</p>
-        <pre>
-&lt;img src="image.jpg" alt="Image de démonstration"&gt;
-        </pre>
-    </section>
+        <section id="images" class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary border-bottom pb-2">Images</h2>
+                <p class="card-text">Utilisez la balise <code>&lt;img&gt;</code> pour afficher des images sur votre page. N'oubliez pas d'ajouter l'attribut <code>src</code> pour spécifier le chemin de l'image.</p>
+                <p class="card-text">Voici un exemple d'inclusion d'une image :</p>
+<pre><code class="language-html">&lt;img src="image.jpg" alt="Image de démonstration"&gt;</code>
+</pre>
+            </div>
+        </section>
 
-    <section id="listes">
-        <h2>Listes</h2>
-        <p>Créez des listes non ordonnées avec &lt;ul&gt; et des listes ordonnées avec &lt;ol&gt;. Utilisez &lt;li&gt; pour chaque élément de la liste.</p>
-        <p>Voici un exemple de liste non ordonnée :</p>
-        <pre>
-&lt;ul&gt;
+        <section id="listes" class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary border-bottom pb-2">Listes</h2>
+                <p class="card-text">Créez des listes non ordonnées avec <code>&lt;ul&gt;</code> et des listes ordonnées avec <code>&lt;ol&gt;</code>. Utilisez <code>&lt;li&gt;</code> pour chaque élément de la liste.</p>
+                <p class="card-text">Voici un exemple de liste non ordonnée :</p>
+<pre><code class="language-html">&lt;ul&gt;
     &lt;li&gt;Élément 1&lt;/li&gt;
     &lt;li&gt;Élément 2&lt;/li&gt;
     &lt;li&gt;Élément 3&lt;/li&gt;
-&lt;/ul&gt;
-        </pre>
-    </section>
+&lt;/ul&gt;</code></pre>
+            </div>
+        </section>
 
-    <section id="commentaires">
-        <h2>Commentaires</h2>
-        <p>Vous pouvez ajouter des commentaires HTML pour expliquer le code. Ils sont délimités par &lt;!-- ... --&gt;.</p>
-        <p>Voici un exemple de commentaire :</p>
-        <pre>
-&lt;!-- Ceci est un commentaire expliquant le code --&gt;
-        </pre>
-    </section>
+        <section id="commentaires" class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary border-bottom pb-2">Commentaires</h2>
+                <p class="card-text">Vous pouvez ajouter des commentaires HTML pour expliquer le code. Ils sont délimités par <code>&lt;!-- ... --&gt;</code>.</p>
+                <p class="card-text">Voici un exemple de commentaire :</p>
+<pre><code class="language-html">&lt;!-- Ceci est un commentaire expliquant le code --&gt;</code></pre>
+            </div>
+        </section>
 
-    <section id="attributs">
-        <h2>Attributs</h2>
-        <p>Les balises peuvent avoir des attributs pour fournir des informations supplémentaires. Par exemple, l'attribut href dans la balise &lt;a&gt; spécifie l'URL de destination.</p>
-        <p>Voici un exemple d'attribut dans une balise :</p>
-        <pre>
-&lt;a href="https://www.example.com"&gt;Visitez notre site web&lt;/a&gt;
-        </pre>
-    </section>
+        <section id="attributs" class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary border-bottom pb-2">Attributs</h2>
+                <p class="card-text">Les balises peuvent avoir des attributs pour fournir des informations supplémentaires. Par exemple, l'attribut <code>href</code> dans la balise <code>&lt;a&gt;</code> spécifie l'URL de destination.</p>
+                <p class="card-text">Voici un exemple d'attribut dans une balise :</p>
+<pre><code class="language-html">&lt;a href="https://www.example.com"&gt;Visitez notre site web&lt;/a&gt;</code></pre>
+            </div>
+        </section>
 
-    <section id="validation">
-        <h2>Validation</h2>
-        <p>Il est important de veiller à ce que votre code HTML soit valide en utilisant des validateurs en ligne comme le <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a>.</p>
-    </section>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <section id="validation" class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary border-bottom pb-2">Validation</h2>
+                        <p class="card-text">Il est important de veiller à ce que votre code HTML soit valide en utilisant des validateurs en ligne comme le <a href="https://validator.w3.org/" target="_blank" class="font-weight-bold">W3C Markup Validation Service</a>.</p>
+                    </div>
+                </section>
+            </div>
 
-    <section id="css">
-        <h2>CSS (Cascading Style Sheets)</h2>
-        <p>Bien que cela ne fasse pas partie intégrante du HTML, la mise en forme de votre page web est souvent gérée par des feuilles de style CSS. Vous pouvez lier une feuille de style externe à votre document HTML pour contrôler la présentation.</p>
-    </section>
+            <div class="col-md-6 mb-4">
+                <section id="css" class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary border-bottom pb-2">CSS (Styles)</h2>
+                        <p class="card-text">Bien que cela ne fasse pas partie intégrante du HTML, la mise en forme de votre page web est souvent gérée par des feuilles de style CSS. Vous pouvez lier une feuille externe.</p>
+                    </div>
+                </section>
+            </div>
 
-    <section id="accessibilite">
-        <h2>Accessibilité</h2>
-        <p>Assurez-vous que votre page est accessible en utilisant des attributs tels que alt pour les images et en respectant les normes d'accessibilité.</p>
-    </section>
+            <div class="col-md-6 mb-4">
+                <section id="accessibilite" class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary border-bottom pb-2">Accessibilité</h2>
+                        <p class="card-text">Assurez-vous que votre page est accessible en utilisant des attributs tels que <code>alt</code> pour les images et en respectant les normes d'accessibilité.</p>
+                    </div>
+                </section>
+            </div>
 
-    <section id="semantique">
-        <h2>Balises Sémantiques</h2>
-        <p>Utilisez des balises sémantiques comme &lt;header&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;section&gt;, etc., pour donner du sens à la structure de votre page et améliorer le référencement.</p>
-    </section>
+            <div class="col-md-6 mb-4">
+                <section id="semantique" class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary border-bottom pb-2">Balises Sémantiques</h2>
+                        <p class="card-text">Utilisez des balises sémantiques comme <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, etc., pour donner du sens à la structure.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
 
-    <footer>
-      
-        <p>Pensez à vérifier votre code HTML grâce au <a href="https://validator.w3.org/" target="_blank">validateur HTML du W3C</a>.</p>
-		
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">Pensez à vérifier votre code HTML grâce au <a href="https://validator.w3.org/" target="_blank" class="text-info font-weight-bold">validateur HTML du W3C</a>.</p>
+        </div>
     </footer>
+	<!-- Script pour traduire automatiquement le bouton Prism.js en français -->
+	<!--script>
+		document.querySelectorAll('pre').forEach(function(bloc) {
+			bloc.setAttribute('data-prismjs-copy', 'Copier');
+			bloc.setAttribute('data-prismjs-copy-success', 'Copié !');
+			bloc.setAttribute('data-prismjs-copy-error', 'Erreur de copie');
+		});
+	</script-->
+    <!-- Scripts Bootstrap 4.6 (jQuery et Bootstrap JS avec Popper inclus) -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+	<!-- Plugin Toolbar (Requis pour le bouton de copie) -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+	<!-- Plugin Copy to Clipboard -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+	<script>
+		// Fermer le menu mobile (collapse) lors du clic sur un lien de navigation
+		$('.navbar-nav .nav-link').on('click', function(){
+			$('.navbar-collapse').collapse('hide');
+		});
+		
+	</script>
 </body>
 </html>
